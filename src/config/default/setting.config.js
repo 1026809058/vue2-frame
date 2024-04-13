@@ -3,7 +3,7 @@
  */
 const setting = {
   //开发以及部署时的URL，hash模式时在不确定二级目录名称的情况下建议使用""代表相对路径或者"/二级目录/"，history模式默认使用"/"或者"/二级目录/"
-  publicPath: "./",
+  publicPath: process.env.NODE_ENV === "production" ? "" : "./",
   //标题
   title: "项目框架",
   //标题分隔符
@@ -22,5 +22,6 @@ const setting = {
   storage: "sessionStorage",
   //路由模式，可选值为 history 或 hash
   routerMode: "hash",
+  buildzip: true,
 };
 module.exports = setting;
